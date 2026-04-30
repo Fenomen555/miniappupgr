@@ -63,15 +63,6 @@ body::before {
   overflow: hidden;
 }
 
-.splash-noise {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px);
-  background-size: 3px 3px;
-}
-
 .splash-center {
   position: relative;
   z-index: 3;

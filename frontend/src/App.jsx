@@ -43,7 +43,6 @@ function detectInitialLang() {
 function SplashScreen({ projectName = "Signals" }) {
   return (
     <div className="splash-screen">
-      <div className="splash-noise" />
       <div className="splash-glow splash-glow-a" />
       <div className="splash-glow splash-glow-b" />
       <section className="splash-center">
