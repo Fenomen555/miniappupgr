@@ -58,11 +58,14 @@ export default function RegistrationAccessPage({
   };
 
   const inlineError = localError || "";
+  const hasTraderId = Boolean(traderId.trim());
   const actionLabel = transitioning
     ? t.registration.opening
     : checking
       ? t.checking
-      : t.registration.submit;
+      : hasTraderId
+        ? t.registration.submit
+        : t.registration.submitEmpty;
 
   return (
     <section className={`reg-access-page ${transitioning ? "is-leaving" : ""}`}>
@@ -120,14 +123,16 @@ export default function RegistrationAccessPage({
                 inputMode="text"
               />
             </label>
-            <p className="reg-access-note">{t.registration.securityNote}</p>
+            <div className="reg-access-note">
+              <span>{t.registration.securityNote}</span>
+            </div>
             {inlineError && <div className="reg-access-inline-error">{inlineError}</div>}
           </form>
           <button
             className={`reg-access-submit ${checking ? "is-busy" : ""} ${transitioning ? "is-success" : ""}`}
             type="submit"
             form="reg-access-form"
-            disabled={!traderId.trim() || checking}
+            disabled={!hasTraderId || checking}
           >
             <span className={`reg-btn-spinner ${checking ? "is-visible" : ""}`} aria-hidden="true" />
             <img className="reg-btn-icon reg-btn-icon-search" src="/icons/search.png" alt="" aria-hidden="true" />

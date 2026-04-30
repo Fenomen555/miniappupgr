@@ -3,10 +3,10 @@ export const GATE_TEXTS = {
     langLabel: "Язык",
     registration: {
       title: "Добро пожаловать",
-      systemText: "Сигналы, проверки и инструменты трейдера в одном рабочем пространстве",
+      systemText: "Сигналы и инструменты для закрытого трейдерского доступа",
       subtitle: "Введите Trader ID, чтобы получить доступ к системе",
       traderTitle: "Укажите Trader ID",
-      traderText: "Проверим профиль и откроем доступ",
+      traderText: "Проверим ID и откроем доступ к системе",
       registerTitle: "Еще не зарегистрированы?",
       registerText: "Создайте профиль и вернитесь для проверки",
       retryTitle: "Trader ID пока не найден",
@@ -18,6 +18,7 @@ export const GATE_TEXTS = {
         "Неверный формат Trader ID. Допустимы буквы, цифры, точка, подчеркивание и дефис",
       opening: "Открываем",
       submit: "Активировать доступ",
+      submitEmpty: "Введите Trader ID",
       createButton: "Зарегистрироваться",
     },
     deposit: {
@@ -37,10 +38,10 @@ export const GATE_TEXTS = {
     langLabel: "Language",
     registration: {
       title: "Welcome",
-      systemText: "Signals, checks and trader tools in one workspace",
+      systemText: "Signals and tools for private trader access",
       subtitle: "Enter your Trader ID to access the system",
       traderTitle: "Enter Trader ID",
-      traderText: "We will check your profile and open access",
+      traderText: "We will verify the ID and open access",
       registerTitle: "Not registered yet?",
       registerText: "Create a profile, then return for verification",
       retryTitle: "Trader ID is not found yet",
@@ -52,6 +53,7 @@ export const GATE_TEXTS = {
         "Invalid Trader ID format. Use letters, numbers, dot, underscore or hyphen",
       opening: "Opening",
       submit: "Activate access",
+      submitEmpty: "Enter Trader ID",
       createButton: "Register",
     },
     deposit: {
@@ -71,10 +73,10 @@ export const GATE_TEXTS = {
     langLabel: "Language",
     registration: {
       title: "Welcome",
-      systemText: "Signals, checks and trader tools in one workspace",
+      systemText: "Signals and tools for private trader access",
       subtitle: "Enter your Trader ID to access the system",
       traderTitle: "Enter Trader ID",
-      traderText: "We will check your profile and open access",
+      traderText: "We will verify the ID and open access",
       registerTitle: "Not registered yet?",
       registerText: "Create a profile, then return for verification",
       retryTitle: "Trader ID is not found yet",
@@ -86,6 +88,7 @@ export const GATE_TEXTS = {
         "Invalid Trader ID format. Use letters, numbers, dot, underscore or hyphen",
       opening: "Opening",
       submit: "Activate access",
+      submitEmpty: "Enter Trader ID",
       createButton: "Register",
     },
     deposit: {
