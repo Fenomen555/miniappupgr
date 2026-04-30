@@ -3,7 +3,7 @@ export const GATE_TEXTS = {
     langLabel: "Язык",
     registration: {
       title: "Добро пожаловать",
-      systemText: "Система для трейдеров с быстрым доступом к сигналам и рабочим инструментам",
+      systemText: "Сигналы, проверки и инструменты трейдера в одном рабочем пространстве",
       subtitle: "Введите Trader ID, чтобы получить доступ к системе",
       traderTitle: "Укажите Trader ID",
       traderText: "Проверим профиль и откроем доступ",
@@ -37,7 +37,7 @@ export const GATE_TEXTS = {
     langLabel: "Language",
     registration: {
       title: "Welcome",
-      systemText: "A trader system with quick access to signals and working tools",
+      systemText: "Signals, checks and trader tools in one workspace",
       subtitle: "Enter your Trader ID to access the system",
       traderTitle: "Enter Trader ID",
       traderText: "We will check your profile and open access",
@@ -71,7 +71,7 @@ export const GATE_TEXTS = {
     langLabel: "Language",
     registration: {
       title: "Welcome",
-      systemText: "A trader system with quick access to signals and working tools",
+      systemText: "Signals, checks and trader tools in one workspace",
       subtitle: "Enter your Trader ID to access the system",
       traderTitle: "Enter Trader ID",
       traderText: "We will check your profile and open access",

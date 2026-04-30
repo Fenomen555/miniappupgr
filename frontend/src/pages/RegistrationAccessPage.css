@@ -25,10 +25,10 @@
   );
   height: 100dvh;
   min-height: 0;
-  padding: calc(12px + var(--gate-top-safe)) 20px calc(12px + var(--safe-bottom));
+  padding: calc(12px + var(--gate-top-safe)) 20px calc(10px + var(--safe-bottom));
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  gap: clamp(12px, 2.2dvh, 22px);
+  gap: clamp(10px, 1.8dvh, 18px);
   overflow: hidden;
   background:
     radial-gradient(620px 420px at 50% -12%, rgba(79, 79, 228, 0.32), transparent 68%),
@@ -156,26 +156,28 @@
 }
 
 .reg-access-content {
-  width: min(560px, 100%);
+  width: min(520px, 100%);
   margin: 0 auto;
   align-self: center;
   min-height: 0;
   max-height: 100%;
   display: grid;
   align-content: center;
-  gap: clamp(18px, 2.55dvh, 25px);
+  gap: clamp(15px, 2.15dvh, 22px);
   padding: 0;
 }
 
 .reg-access-copy {
   display: grid;
-  gap: 0;
+  justify-items: center;
+  text-align: center;
 }
 
 .reg-access-copy h1 {
-  margin: 0 0 13px;
-  font-size: clamp(1.95rem, 7.8vw, 2.8rem);
-  line-height: 1.02;
+  max-width: 430px;
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 8vw, 2.7rem);
+  line-height: 1;
   color: #f2f6ff;
   text-shadow: 0 8px 24px rgba(17, 18, 66, 0.58);
 }
@@ -188,22 +190,22 @@
 }
 
 .reg-system-text {
-  max-width: 390px;
-  color: #d8dcff;
+  max-width: 420px;
+  color: #d3d8ff;
   font-size: clamp(0.86rem, 2.75vw, 0.95rem);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .reg-access-subtitle {
-  color: #aeb7ff;
-  font-size: clamp(0.92rem, 3vw, 1rem);
+  color: #9faaff;
+  font-size: clamp(0.88rem, 2.85vw, 0.96rem);
 }
 
 .reg-register-lottie {
-  width: clamp(74px, 20vw, 104px);
-  height: clamp(74px, 20vw, 104px);
+  width: clamp(70px, 18vw, 94px);
+  height: clamp(70px, 18vw, 94px);
   justify-self: center;
-  margin: clamp(-4px, -0.4dvh, 0px) 0 clamp(-2px, -0.2dvh, 0px);
+  margin: clamp(-2px, -0.25dvh, 0px) 0 clamp(-6px, -0.55dvh, -2px);
   filter:
     drop-shadow(0 18px 28px rgba(1, 2, 18, 0.28))
     drop-shadow(0 0 22px rgba(93, 101, 255, 0.18));
@@ -212,19 +214,18 @@
 
 .reg-flow-group {
   display: grid;
-  gap: clamp(10px, 1.4dvh, 13px);
+  gap: clamp(10px, 1.25dvh, 13px);
 }
 
 .reg-flow-primary {
-  gap: clamp(11px, 1.55dvh, 14px);
-}
-
-.reg-flow-register {
   gap: clamp(10px, 1.35dvh, 13px);
 }
 
-.reg-access-card,
-.reg-register-panel {
+.reg-flow-register {
+  gap: clamp(9px, 1.15dvh, 12px);
+}
+
+.reg-access-card {
   border-radius: 17px;
   border: 1px solid rgba(101, 91, 238, 0.36);
   background:
@@ -239,25 +240,37 @@
   padding: 14px;
 }
 
-.reg-card-head,
-.reg-register-panel > div {
+.reg-register-panel {
+  padding: 0 8px;
   display: grid;
   gap: 4px;
+  justify-items: center;
+  text-align: center;
+}
+
+.reg-card-head {
+  display: grid;
+  gap: 5px;
+}
+
+.reg-register-panel > div {
+  display: grid;
+  gap: 5px;
 }
 
 .reg-card-head h3,
 .reg-register-panel h3 {
   margin: 0;
   color: #f5f6ff;
-  font-size: 1.02rem;
+  font-size: 1rem;
 }
 
 .reg-card-head p,
 .reg-register-panel p {
   margin: 0;
   color: #c4c9ff;
-  line-height: 1.38;
-  font-size: 0.88rem;
+  line-height: 1.34;
+  font-size: 0.86rem;
 }
 
 .reg-access-retry {
@@ -480,12 +493,6 @@
   filter: grayscale(0.2) drop-shadow(0 0 8px rgba(120, 132, 210, 0.32));
 }
 
-.reg-register-panel {
-  padding: 14px;
-  display: grid;
-  gap: 4px;
-}
-
 .reg-access-create-btn {
   color: #1c1202;
   border: 1px solid rgba(255, 211, 91, 0.78);
@@ -516,20 +523,20 @@ html.device-desktop .reg-access-page {
 
 @media (max-height: 760px) {
   .reg-access-page {
-    gap: 9px;
+    gap: 8px;
   }
 
   .reg-access-content {
-    gap: 14px;
+    gap: 12px;
   }
 
   .reg-access-copy h1 {
-    margin-bottom: 9px;
+    margin-bottom: 7px;
     font-size: clamp(1.62rem, 6.9vw, 2.32rem);
   }
 
   .reg-system-text {
-    margin-bottom: 9px;
+    margin-bottom: 7px;
   }
 
   .reg-system-text,
@@ -538,8 +545,7 @@ html.device-desktop .reg-access-page {
     line-height: 1.32;
   }
 
-  .reg-access-card,
-  .reg-register-panel {
+  .reg-access-card {
     padding: 12px;
   }
 
@@ -563,16 +569,16 @@ html.device-desktop .reg-access-page {
   }
 
   .reg-register-lottie {
-    width: 64px;
-    height: 64px;
+    width: 58px;
+    height: 58px;
   }
 
   .reg-access-content {
-    gap: 11px;
+    gap: 9px;
   }
 
   .reg-flow-group {
-    gap: 8px;
+    gap: 7px;
   }
 
   .reg-access-copy h1 {
