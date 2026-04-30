@@ -872,55 +872,55 @@
 
   .reg-info-visual-card {
     min-height: 86px;
-    grid-template-columns: 62px minmax(0, 1fr) 38px;
-    gap: 10px;
-    padding: 12px 11px;
+    grid-template-columns: 56px minmax(0, 1fr) 34px;
+    gap: 8px;
+    padding: 12px 9px;
     border-radius: 15px;
   }
 
   .reg-info-avatar {
-    width: 58px;
-    height: 58px;
+    width: 54px;
+    height: 54px;
     border-width: 4px;
   }
 
   .reg-info-avatar-head {
-    top: 14px;
-    width: 21px;
-    height: 21px;
+    top: 13px;
+    width: 20px;
+    height: 20px;
   }
 
   .reg-info-avatar-body {
     bottom: 9px;
-    width: 39px;
-    height: 21px;
+    width: 36px;
+    height: 19px;
   }
 
   .reg-info-user strong {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
   }
 
   .reg-info-user span {
-    margin-top: 6px;
-    font-size: 0.72rem;
+    margin-top: 5px;
+    font-size: 0.68rem;
   }
 
   .reg-info-copy-target {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
   }
 
   .reg-info-copy-icon {
-    right: 8px;
-    top: 8px;
-    transform: scale(0.9);
+    right: 6px;
+    top: 7px;
+    transform: scale(0.82);
     transform-origin: center;
   }
 
   .reg-info-copy-arrow {
-    right: -14px;
-    top: 6px;
-    transform: rotate(18deg) scale(0.86);
+    right: -17px;
+    top: 5px;
+    transform: rotate(18deg) scale(0.76);
   }
 }
 
