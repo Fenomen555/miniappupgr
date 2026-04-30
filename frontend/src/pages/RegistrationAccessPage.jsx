@@ -25,6 +25,7 @@ export default function RegistrationAccessPage({
   const [traderId, setTraderId] = useState(cleanTraderId(initialTraderId));
   const [localError, setLocalError] = useState("");
   const [dirty, setDirty] = useState(false);
+  const [infoOpen, setInfoOpen] = useState(false);
 
   const validateTraderId = (value, required = false) => {
     const cleaned = cleanTraderId(value);
@@ -43,6 +44,15 @@ export default function RegistrationAccessPage({
     if (!error) return;
     setLocalError(String(error));
   }, [error]);
+
+  useEffect(() => {
+    if (!infoOpen) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setInfoOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [infoOpen]);
 
   const submit = (e) => {
     e.preventDefault();
@@ -89,6 +99,14 @@ export default function RegistrationAccessPage({
 
         <div className="reg-flow-group reg-flow-primary">
           <form id="reg-access-form" className="reg-access-card reg-access-form" onSubmit={submit}>
+            <button
+              className="reg-info-trigger"
+              type="button"
+              aria-label={t.registration.infoLabel}
+              onClick={() => setInfoOpen(true)}
+            >
+              <img src="/icons/info.png" alt="" aria-hidden="true" />
+            </button>
             <div className="reg-card-head">
               <h3>{t.registration.traderTitle}</h3>
               <p>{t.registration.traderText}</p>
@@ -124,10 +142,7 @@ export default function RegistrationAccessPage({
               />
             </label>
             <div className="reg-access-note">
-              <span>
-                <img src="/icons/info.png" alt="" aria-hidden="true" />
-                {t.registration.securityNote}
-              </span>
+              <span>{t.registration.securityNote}</span>
             </div>
             {inlineError && <div className="reg-access-inline-error">{inlineError}</div>}
           </form>
@@ -160,6 +175,29 @@ export default function RegistrationAccessPage({
       <footer className="reg-access-footer">
         <LangPicker value={lang} onChange={setLang} label={t.langLabel} />
       </footer>
+
+      {infoOpen && (
+        <div className="reg-info-modal" role="dialog" aria-modal="true" aria-labelledby="reg-info-title">
+          <button className="reg-info-backdrop" type="button" aria-label={t.registration.infoClose} onClick={() => setInfoOpen(false)} />
+          <section className="reg-info-panel">
+            <button className="reg-info-close" type="button" aria-label={t.registration.infoClose} onClick={() => setInfoOpen(false)}>
+              x
+            </button>
+            <div className="reg-info-title-row">
+              <img src="/icons/info.png" alt="" aria-hidden="true" />
+              <h2 id="reg-info-title">{t.registration.infoTitle}</h2>
+            </div>
+            <p>{t.registration.infoText}</p>
+            <figure className="reg-info-image">
+              <img src="/images/id-copy-guide.png" alt={t.registration.infoImageCaption} />
+              <figcaption>{t.registration.infoImageCaption}</figcaption>
+            </figure>
+            <button className="reg-info-done" type="button" onClick={() => setInfoOpen(false)}>
+              {t.registration.infoClose}
+            </button>
+          </section>
+        </div>
+      )}
     </section>
   );
 }

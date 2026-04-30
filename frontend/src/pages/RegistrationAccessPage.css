@@ -226,6 +226,7 @@
 }
 
 .reg-access-card {
+  position: relative;
   border-radius: 17px;
   border: 1px solid rgba(101, 91, 238, 0.36);
   background:
@@ -251,6 +252,7 @@
 .reg-card-head {
   display: grid;
   gap: 7px;
+  padding-right: 44px;
 }
 
 .reg-register-panel > div {
@@ -369,7 +371,6 @@
 .reg-access-note span {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   min-height: 24px;
   border-radius: 999px;
   border: 1px solid rgba(117, 109, 255, 0.28);
@@ -380,12 +381,39 @@
   line-height: 1.2;
 }
 
-.reg-access-note img {
-  width: 16px;
-  height: 16px;
+.reg-info-trigger {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid rgba(117, 109, 255, 0.34);
+  background:
+    radial-gradient(circle at 35% 25%, rgba(80, 171, 255, 0.22), transparent 62%),
+    rgba(12, 16, 54, 0.72);
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.reg-info-trigger img {
+  width: 19px;
+  height: 19px;
   object-fit: contain;
   filter: drop-shadow(0 0 7px rgba(64, 154, 255, 0.28));
-  flex: 0 0 auto;
+}
+
+.reg-info-trigger:focus-visible,
+.reg-info-close:focus-visible,
+.reg-info-done:focus-visible {
+  outline: 2px solid rgba(139, 196, 255, 0.82);
+  outline-offset: 2px;
 }
 
 .reg-access-inline-error {
@@ -414,6 +442,121 @@
   font-weight: 800;
   letter-spacing: 0.01em;
   transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease, border-color 160ms ease, filter 160ms ease;
+}
+
+.reg-info-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: max(16px, var(--gate-top-safe)) 16px max(16px, var(--safe-bottom));
+}
+
+.reg-info-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background:
+    radial-gradient(420px 320px at 50% 24%, rgba(83, 87, 235, 0.18), transparent 70%),
+    rgba(2, 3, 13, 0.76);
+  backdrop-filter: blur(10px);
+}
+
+.reg-info-panel {
+  position: relative;
+  z-index: 1;
+  width: min(430px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  border-radius: 22px;
+  border: 1px solid rgba(112, 104, 255, 0.42);
+  background:
+    radial-gradient(360px 180px at 50% 0%, rgba(78, 99, 255, 0.16), transparent 72%),
+    linear-gradient(180deg, rgba(10, 13, 49, 0.97), rgba(5, 6, 26, 0.98));
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  padding: 18px;
+}
+
+.reg-info-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid rgba(130, 122, 255, 0.28);
+  background: rgba(14, 17, 54, 0.76);
+  color: #dfe4ff;
+  font-size: 1.28rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.reg-info-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 40px;
+}
+
+.reg-info-title-row img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.reg-info-title-row h2 {
+  margin: 0;
+  color: #f6f7ff;
+  font-size: 1.22rem;
+  line-height: 1.18;
+}
+
+.reg-info-panel p {
+  margin: 12px 0 14px;
+  color: #cbd2ff;
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+.reg-info-image {
+  margin: 0;
+  border-radius: 16px;
+  border: 1px solid rgba(109, 123, 255, 0.24);
+  background: rgba(4, 6, 27, 0.62);
+  padding: 10px;
+}
+
+.reg-info-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.reg-info-image figcaption {
+  margin-top: 8px;
+  color: #98a5ef;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.reg-info-done {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 14px;
+  border: 1px solid rgba(116, 129, 255, 0.58);
+  border-radius: 14px;
+  background:
+    radial-gradient(120px 80px at 20% 0%, rgba(132, 174, 255, 0.26), transparent 74%),
+    linear-gradient(135deg, #425cff 0%, #7553ff 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.96rem;
+  cursor: pointer;
 }
 
 .reg-access-submit {
@@ -625,6 +768,17 @@ html.device-desktop .reg-access-page {
   .reg-card-head h3,
   .reg-register-panel h3 {
     font-size: 0.92rem;
+  }
+
+  .reg-card-head {
+    padding-right: 38px;
+  }
+
+  .reg-info-trigger {
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
   }
 
   .reg-access-form {
