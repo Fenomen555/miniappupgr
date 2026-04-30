@@ -29,9 +29,10 @@
   flex-direction: column;
   overflow: hidden;
   background:
-    radial-gradient(640px 420px at 50% -18%, rgba(143, 98, 34, 0.32), transparent 68%),
-    radial-gradient(520px 360px at 50% 116%, rgba(108, 78, 30, 0.18), transparent 70%),
-    linear-gradient(180deg, #17110a 0%, #080808 58%, #030304 100%);
+    radial-gradient(640px 420px at 52% -18%, rgba(94, 74, 255, 0.38), transparent 68%),
+    radial-gradient(520px 360px at 112% 16%, rgba(158, 76, 255, 0.18), transparent 68%),
+    radial-gradient(560px 380px at 50% 116%, rgba(47, 72, 185, 0.16), transparent 72%),
+    linear-gradient(180deg, #070725 0%, #05061a 55%, #02030d 100%);
   font-family: "Sora", "Space Grotesk", "Manrope", sans-serif;
   transition: opacity 240ms ease, transform 240ms ease, filter 240ms ease;
 }
@@ -55,7 +56,7 @@
   height: 340px;
   left: -150px;
   top: -130px;
-  background: rgba(169, 111, 36, 0.26);
+  background: rgba(69, 92, 255, 0.26);
 }
 
 .reg-access-backdrop-b {
@@ -63,7 +64,7 @@
   height: 440px;
   right: -220px;
   bottom: -220px;
-  background: rgba(105, 72, 24, 0.18);
+  background: rgba(146, 74, 255, 0.2);
 }
 
 .reg-access-top,
@@ -100,17 +101,18 @@
   max-width: min(52vw, 230px);
   height: 42px;
   border-radius: 13px;
-  border: 1px solid rgba(159, 111, 44, 0.46);
-  background: linear-gradient(180deg, rgba(40, 30, 17, 0.9), rgba(17, 14, 10, 0.9));
+  border: 1px solid rgba(111, 101, 255, 0.5);
+  background: linear-gradient(180deg, rgba(20, 22, 64, 0.92), rgba(10, 12, 38, 0.92));
   box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 218, 151, 0.09);
+    0 16px 34px rgba(0, 0, 0, 0.34),
+    0 0 28px rgba(88, 74, 255, 0.18),
+    inset 0 1px 0 rgba(205, 198, 255, 0.11);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 0 14px;
-  color: #d9ad60;
+  color: #c9c6ff;
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -124,8 +126,8 @@
   width: 9px;
   height: 9px;
   border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #fbe3ab, #cf9643 70%);
-  box-shadow: 0 0 18px rgba(223, 171, 82, 0.76);
+  background: radial-gradient(circle at 30% 30%, #c7a4ff, #6d6cff 48%, #7f45ff 100%);
+  box-shadow: 0 0 18px rgba(119, 102, 255, 0.78);
   flex: 0 0 auto;
 }
 
@@ -134,13 +136,14 @@
 }
 
 .reg-access-top .lang-label {
-  color: #9eb4d0;
+  color: #aeb7e8;
 }
 
 .reg-access-top .lang-btn {
-  border-color: rgba(159, 111, 44, 0.62);
-  background: #17130d;
-  color: #ead3a6;
+  border-color: rgba(111, 101, 255, 0.62);
+  background: #11133a;
+  color: #ecebff;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
   min-height: 41px;
   height: 41px;
   padding-top: 0;
@@ -148,13 +151,19 @@
 }
 
 .reg-access-top .lang-menu {
-  background: #15100a;
-  border-color: rgba(159, 111, 44, 0.58);
+  background: #101236;
+  border-color: rgba(111, 101, 255, 0.58);
   backdrop-filter: none;
 }
 
 .reg-access-top .lang-item {
-  color: #ead3a6;
+  color: #e3e5ff;
+}
+
+.reg-access-top .lang-item:hover,
+.reg-access-top .lang-item.active {
+  background: rgba(112, 96, 255, 0.2);
+  color: #ffffff;
 }
 
 .reg-access-content {
@@ -180,12 +189,12 @@
   font-size: clamp(2rem, 8.2vw, 3rem);
   line-height: 1.02;
   color: #f2f6ff;
-  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+  text-shadow: 0 8px 24px rgba(17, 18, 66, 0.58);
 }
 
 .reg-access-copy p {
   margin: 0;
-  color: #d8c6a5;
+  color: #bcc5ff;
   font-size: clamp(0.94rem, 3.25vw, 1.05rem);
   line-height: 1.38;
 }
@@ -193,9 +202,11 @@
 .reg-access-card,
 .reg-register-panel {
   border-radius: 15px;
-  border: 1px solid rgba(159, 111, 44, 0.42);
-  background: linear-gradient(180deg, rgba(14, 14, 14, 0.9), rgba(7, 7, 8, 0.84));
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(111, 101, 255, 0.36);
+  background: linear-gradient(180deg, rgba(12, 15, 46, 0.88), rgba(6, 8, 28, 0.82));
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(206, 206, 255, 0.06);
 }
 
 .reg-access-card {
@@ -211,34 +222,34 @@
 .reg-card-head h3,
 .reg-register-panel h3 {
   margin: 0;
-  color: #f3f7ff;
+  color: #f5f6ff;
   font-size: 1rem;
 }
 
 .reg-card-head p,
 .reg-register-panel p {
   margin: 0;
-  color: #d9c5a2;
+  color: #b8c1ff;
   line-height: 1.34;
   font-size: 0.88rem;
 }
 
 .reg-access-retry {
   border-radius: 12px;
-  border: 1px solid rgba(240, 200, 126, 0.35);
-  background: rgba(240, 200, 126, 0.1);
+  border: 1px solid rgba(111, 101, 255, 0.38);
+  background: rgba(111, 101, 255, 0.12);
   padding: 9px 10px;
 }
 
 .reg-access-retry h4 {
   margin: 0 0 2px;
-  color: #f2d39d;
+  color: #d9d4ff;
   font-size: 0.88rem;
 }
 
 .reg-access-retry p {
   margin: 0;
-  color: #d2e0f6;
+  color: #c5ccff;
   line-height: 1.3;
   font-size: 0.84rem;
 }
@@ -252,8 +263,8 @@
   width: 100%;
   min-height: 48px;
   border-radius: 13px;
-  border: 1px solid rgba(159, 111, 44, 0.38);
-  background: linear-gradient(180deg, rgba(8, 8, 9, 0.98), rgba(5, 5, 6, 0.95));
+  border: 1px solid rgba(111, 101, 255, 0.36);
+  background: linear-gradient(180deg, rgba(6, 8, 28, 0.98), rgba(4, 5, 19, 0.96));
   color: #f5f7ff;
   font-size: 1rem;
   padding: 12px 14px;
@@ -261,13 +272,13 @@
 }
 
 .reg-access-form input:focus {
-  border-color: rgba(240, 200, 126, 0.72);
-  box-shadow: 0 0 0 4px rgba(240, 200, 126, 0.15);
+  border-color: rgba(151, 111, 255, 0.82);
+  box-shadow: 0 0 0 4px rgba(111, 101, 255, 0.18);
 }
 
 .reg-access-note {
   margin: -2px 0 0;
-  color: #bfa982;
+  color: #949fe0;
   font-size: 0.78rem;
   line-height: 1.28;
 }
@@ -299,15 +310,17 @@
 }
 
 .reg-access-submit {
-  color: #1b1307;
-  background: linear-gradient(132deg, #94631f, #d7a955);
-  box-shadow: 0 10px 22px rgba(145, 103, 40, 0.3);
+  color: #ffffff;
+  background: linear-gradient(132deg, #4f6cff, #9c5cff);
+  box-shadow:
+    0 12px 26px rgba(80, 96, 255, 0.3),
+    0 0 24px rgba(156, 92, 255, 0.18);
 }
 
 .reg-access-submit:disabled {
-  color: #bba477;
-  border: 1px solid rgba(240, 200, 126, 0.3);
-  background: rgba(12, 17, 29, 0.66);
+  color: #828ab8;
+  border: 1px solid rgba(111, 101, 255, 0.28);
+  background: rgba(7, 9, 30, 0.68);
   box-shadow: none;
   opacity: 0.8;
 }
@@ -331,8 +344,8 @@
   width: 16px;
   height: 16px;
   border-radius: 999px;
-  border: 2px solid rgba(70, 45, 10, 0.28);
-  border-top-color: #2b1c05;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  border-top-color: #ffffff;
   opacity: 0;
   transform: scale(0.8);
 }
@@ -350,9 +363,9 @@
 }
 
 .reg-access-create-btn {
-  color: #d9ad60;
-  border: 1px solid rgba(159, 111, 44, 0.56);
-  background: rgba(16, 13, 9, 0.62);
+  color: #d9d7ff;
+  border: 1px solid rgba(111, 101, 255, 0.52);
+  background: rgba(10, 12, 38, 0.68);
 }
 
 html.device-mobile .reg-access-page {
