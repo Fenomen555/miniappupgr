@@ -4,11 +4,11 @@ export const GATE_TEXTS = {
     registration: {
       title: "Добро пожаловать",
       subtitle:
-        "Укажите Trader ID, чтобы открыть приложение. Если аккаунта еще нет, регистрацию можно пройти сейчас",
+        "Введите Trader ID, чтобы открыть приложение. Нет аккаунта? Зарегистрируйтесь сейчас",
       traderTitle: "Укажите Trader ID",
-      traderText: "Проверим профиль и откроем доступ, если регистрация уже есть",
+      traderText: "Проверим профиль и откроем доступ",
       registerTitle: "Еще не зарегистрированы?",
-      registerText: "Создайте профиль по нашей ссылке и вернитесь сюда для проверки",
+      registerText: "Создайте профиль по нашей ссылке и вернитесь для проверки",
       retryTitle: "Trader ID пока не найден",
       retryText: "Проверь ID или заверши регистрацию, затем повтори проверку",
       traderPlaceholder: "Введите ваш Trader ID",
@@ -38,11 +38,11 @@ export const GATE_TEXTS = {
     registration: {
       title: "Welcome",
       subtitle:
-        "Enter your Trader ID to open the app. If you do not have an account yet, you can register now",
+        "Enter your Trader ID to open the app. No account yet? Register now",
       traderTitle: "Enter Trader ID",
-      traderText: "We will check your profile and open access if registration is already active",
+      traderText: "We will check your profile and open access",
       registerTitle: "Not registered yet?",
-      registerText: "Create a profile through our link, then return here for verification",
+      registerText: "Create a profile through our link, then return for verification",
       retryTitle: "Trader ID is not found yet",
       retryText: "Check the ID or finish registration, then try again",
       traderPlaceholder: "Enter your Trader ID",
@@ -72,11 +72,11 @@ export const GATE_TEXTS = {
     registration: {
       title: "Welcome",
       subtitle:
-        "Enter your Trader ID to open the app. If you do not have an account yet, you can register now",
+        "Enter your Trader ID to open the app. No account yet? Register now",
       traderTitle: "Enter Trader ID",
-      traderText: "We will check your profile and open access if registration is already active",
+      traderText: "We will check your profile and open access",
       registerTitle: "Not registered yet?",
-      registerText: "Create a profile through our link, then return here for verification",
+      registerText: "Create a profile through our link, then return for verification",
       retryTitle: "Trader ID is not found yet",
       retryText: "Check the ID or finish registration, then try again",
       traderPlaceholder: "Enter your Trader ID",

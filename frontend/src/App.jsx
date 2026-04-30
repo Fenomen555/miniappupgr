@@ -46,14 +46,12 @@ function SplashScreen({ projectName = "Signals" }) {
       <div className="splash-glow splash-glow-a" />
       <div className="splash-glow splash-glow-b" />
       <section className="splash-center">
-        <div className="splash-badge">Mini App</div>
-        <h1>{projectName}</h1>
-        <p>Checking access...</p>
+        <div className="splash-brand">{projectName}</div>
         <div className="splash-loader" aria-hidden="true">
-          <span />
-          <span />
-          <span />
+          <span className="splash-loader-ring" />
+          <span className="splash-loader-core" />
         </div>
+        <p>Checking access</p>
       </section>
     </div>
   );

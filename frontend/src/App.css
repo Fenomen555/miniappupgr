@@ -1,11 +1,13 @@
 :root {
-  --bg-0: #020a17;
-  --bg-1: #051327;
-  --bg-2: #0a1d37;
+  --bg-0: #03030f;
+  --bg-1: #07083a;
+  --bg-2: #17146b;
   --ink: #edf4ff;
-  --muted: #9ab0ca;
-  --gold-1: #d3a84f;
-  --gold-2: #f6d187;
+  --muted: #a7b1ed;
+  --gold-1: #ffd852;
+  --gold-2: #ff9d2e;
+  --accent-blue: #4963ff;
+  --accent-violet: #8158ff;
   --shadow: 0 26px 60px rgba(0, 0, 0, 0.42);
   --safe-top: max(
     env(safe-area-inset-top, 0px),
@@ -38,9 +40,9 @@ body {
   color: var(--ink);
   font-family: "Space Grotesk", "Manrope", "Segoe UI", sans-serif;
   background:
-    radial-gradient(1200px 720px at -10% -20%, rgba(212, 166, 84, 0.22), transparent 65%),
-    radial-gradient(1000px 620px at 120% -30%, rgba(125, 90, 38, 0.18), transparent 60%),
-    linear-gradient(180deg, #1a140b 0%, #0f131b 44%, #07090e 100%);
+    radial-gradient(980px 680px at 50% -24%, rgba(77, 76, 229, 0.32), transparent 64%),
+    radial-gradient(900px 620px at 110% 12%, rgba(126, 85, 255, 0.18), transparent 62%),
+    linear-gradient(180deg, var(--bg-1) 0%, #05061e 54%, var(--bg-0) 100%);
   overflow-x: hidden;
 }
 
@@ -61,68 +63,102 @@ body::before {
   place-items: center;
   padding: 22px;
   overflow: hidden;
+  background:
+    radial-gradient(560px 380px at 50% 20%, rgba(73, 99, 255, 0.24), transparent 68%),
+    radial-gradient(440px 320px at 72% 72%, rgba(129, 88, 255, 0.18), transparent 72%),
+    linear-gradient(180deg, #0a0b38 0%, #05061e 58%, #03030f 100%);
 }
 
 .splash-center {
   position: relative;
   z-index: 3;
+  width: min(320px, 100%);
+  display: grid;
+  place-items: center;
+  gap: 18px;
   text-align: center;
-}
-
-.splash-center h1 {
-  margin: 12px 0 6px;
-  font-size: clamp(2rem, 7.2vw, 3.7rem);
-  letter-spacing: 0.04em;
 }
 
 .splash-center p {
   margin: 0;
-  color: #adc1dc;
+  color: #c8ceff;
+  font-size: 0.95rem;
 }
 
-.splash-badge {
+.splash-brand {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 7px 12px;
-  color: #f4d394;
-  background: rgba(255, 255, 255, 0.05);
+  min-width: 112px;
+  max-width: min(72vw, 260px);
+  height: 42px;
+  border-radius: 13px;
+  border: 1px solid rgba(104, 98, 239, 0.58);
+  padding: 0 16px;
+  color: #f3f4ff;
+  background: linear-gradient(180deg, rgba(25, 27, 84, 0.9), rgba(11, 12, 48, 0.9));
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.34),
+    0 0 28px rgba(78, 74, 220, 0.2),
+    inset 0 1px 0 rgba(205, 198, 255, 0.12);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .splash-loader {
-  margin: 20px auto 0;
-  width: 80px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+  position: relative;
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
 }
 
-.splash-loader span {
-  width: 12px;
-  height: 12px;
+.splash-loader-ring {
+  position: absolute;
+  inset: 0;
   border-radius: 999px;
-  background: linear-gradient(120deg, var(--gold-1), var(--gold-2));
-  animation: loader 1.2s infinite ease-in-out;
+  border: 2px solid rgba(130, 121, 255, 0.2);
+  border-top-color: rgba(126, 181, 255, 0.96);
+  border-right-color: rgba(133, 88, 255, 0.88);
+  box-shadow:
+    0 0 28px rgba(82, 101, 255, 0.22),
+    inset 0 0 26px rgba(77, 76, 229, 0.1);
+  animation: splash-spin 1s linear infinite;
 }
 
-.splash-loader span:nth-child(2) {
-  animation-delay: 0.16s;
+.splash-loader-core {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.95), rgba(144, 194, 255, 0.76) 34%, rgba(88, 84, 255, 0.7) 72%),
+    linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+  box-shadow:
+    0 0 22px rgba(82, 139, 255, 0.54),
+    0 0 40px rgba(129, 88, 255, 0.22);
+  animation: splash-pulse 1.35s ease-in-out infinite;
 }
 
-.splash-loader span:nth-child(3) {
-  animation-delay: 0.32s;
+@keyframes splash-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes loader {
+@keyframes splash-pulse {
   0%,
   100% {
-    transform: translateY(0);
-    opacity: 0.55;
+    transform: scale(0.9);
+    opacity: 0.78;
   }
+
   50% {
-    transform: translateY(-7px);
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -139,7 +175,7 @@ body::before {
   height: 420px;
   top: -140px;
   left: -100px;
-  background: rgba(246, 209, 135, 0.28);
+  background: rgba(73, 99, 255, 0.26);
 }
 
 .splash-glow-b {
@@ -147,7 +183,7 @@ body::before {
   height: 520px;
   right: -160px;
   bottom: -240px;
-  background: rgba(68, 137, 255, 0.24);
+  background: rgba(129, 88, 255, 0.22);
 }
 
 .ready-page {

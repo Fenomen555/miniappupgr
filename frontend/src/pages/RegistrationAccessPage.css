@@ -28,7 +28,7 @@
   padding: calc(12px + var(--gate-top-safe)) 20px calc(12px + var(--safe-bottom));
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  gap: clamp(10px, 2dvh, 18px);
+  gap: clamp(12px, 2.2dvh, 22px);
   overflow: hidden;
   background:
     radial-gradient(620px 420px at 50% -12%, rgba(79, 79, 228, 0.32), transparent 68%),
@@ -161,16 +161,15 @@
   align-self: center;
   min-height: 0;
   max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(9px, 1.45dvh, 13px);
+  display: grid;
+  align-content: center;
+  gap: clamp(18px, 2.65dvh, 26px);
   padding: 0;
 }
 
 .reg-access-copy {
   display: grid;
-  gap: 9px;
+  gap: 10px;
 }
 
 .reg-access-copy h1 {
@@ -185,21 +184,36 @@
   margin: 0;
   color: #c8ceff;
   font-size: clamp(0.94rem, 3.25vw, 1.05rem);
-  line-height: 1.38;
+  line-height: 1.42;
+}
+
+.reg-flow-group {
+  display: grid;
+  gap: clamp(10px, 1.4dvh, 13px);
+}
+
+.reg-flow-primary {
+  gap: clamp(11px, 1.55dvh, 14px);
+}
+
+.reg-flow-register {
+  gap: clamp(10px, 1.35dvh, 13px);
 }
 
 .reg-access-card,
 .reg-register-panel {
-  border-radius: 15px;
-  border: 1px solid rgba(101, 91, 238, 0.42);
-  background: linear-gradient(180deg, rgba(9, 11, 48, 0.9), rgba(5, 6, 31, 0.84));
+  border-radius: 17px;
+  border: 1px solid rgba(101, 91, 238, 0.36);
+  background:
+    radial-gradient(260px 120px at 6% 0%, rgba(78, 99, 255, 0.1), transparent 72%),
+    linear-gradient(180deg, rgba(8, 11, 45, 0.78), rgba(5, 6, 28, 0.72));
   box-shadow:
-    0 14px 34px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(206, 206, 255, 0.06);
+    0 14px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(206, 206, 255, 0.07);
 }
 
 .reg-access-card {
-  padding: 13px;
+  padding: 14px;
 }
 
 .reg-card-head,
@@ -212,14 +226,14 @@
 .reg-register-panel h3 {
   margin: 0;
   color: #f5f6ff;
-  font-size: 1rem;
+  font-size: 1.02rem;
 }
 
 .reg-card-head p,
 .reg-register-panel p {
   margin: 0;
   color: #c4c9ff;
-  line-height: 1.34;
+  line-height: 1.38;
   font-size: 0.88rem;
 }
 
@@ -245,20 +259,20 @@
 
 .reg-access-form {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .reg-id-field {
   width: 100%;
-  min-height: 50px;
-  border-radius: 16px;
-  border: 1px solid rgba(128, 119, 255, 0.48);
+  min-height: 52px;
+  border-radius: 17px;
+  border: 1px solid rgba(134, 124, 255, 0.54);
   background:
-    linear-gradient(180deg, rgba(9, 12, 49, 0.98), rgba(4, 6, 27, 0.96)),
-    radial-gradient(140px 70px at 0% 50%, rgba(72, 111, 255, 0.18), transparent 72%);
+    radial-gradient(190px 80px at 0% 50%, rgba(82, 123, 255, 0.18), transparent 72%),
+    linear-gradient(180deg, rgba(8, 11, 46, 0.98), rgba(4, 5, 24, 0.96));
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 14px 30px rgba(1, 2, 14, 0.2);
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 12px 28px rgba(1, 2, 14, 0.18);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -267,9 +281,10 @@
 }
 
 .reg-id-field:focus-within {
-  border-color: rgba(139, 128, 255, 0.9);
+  border-color: rgba(151, 144, 255, 0.94);
   box-shadow:
-    0 0 0 4px rgba(92, 87, 238, 0.2),
+    0 0 0 4px rgba(92, 87, 238, 0.18),
+    0 0 26px rgba(95, 102, 255, 0.2),
     0 16px 34px rgba(42, 38, 152, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
@@ -278,8 +293,8 @@
   width: 31px;
   height: 31px;
   border-radius: 11px;
-  background: linear-gradient(180deg, rgba(93, 133, 255, 0.22), rgba(63, 63, 168, 0.18));
-  border: 1px solid rgba(143, 151, 255, 0.22);
+  background: linear-gradient(180deg, rgba(96, 139, 255, 0.24), rgba(64, 63, 170, 0.18));
+  border: 1px solid rgba(157, 165, 255, 0.24);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -328,9 +343,10 @@
 
 .reg-access-submit,
 .reg-access-create-btn {
-  width: 100%;
-  min-height: 48px;
-  border-radius: 15px;
+  width: min(432px, calc(100% - 10px));
+  justify-self: center;
+  min-height: 49px;
+  border-radius: 16px;
   border: none;
   display: inline-flex;
   align-items: center;
@@ -344,6 +360,8 @@
 }
 
 .reg-access-submit {
+  position: relative;
+  overflow: hidden;
   color: #ffffff;
   border: 1px solid rgba(116, 129, 255, 0.62);
   background:
@@ -355,12 +373,28 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
+.reg-access-submit::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  opacity: 0;
+  transform: translateX(-80%);
+  pointer-events: none;
+}
+
+.reg-access-submit.is-busy::before {
+  opacity: 1;
+  animation: reg-button-sheen 1.3s ease-in-out infinite;
+}
+
 .reg-access-submit:disabled {
   color: #828ab8;
   border: 1px solid rgba(101, 91, 238, 0.28);
   background: rgba(7, 9, 30, 0.7);
   box-shadow: none;
-  opacity: 0.8;
+  opacity: 0.74;
 }
 
 .reg-access-submit.is-busy {
@@ -368,9 +402,11 @@
 }
 
 .reg-access-submit.is-success {
-  color: #d3f0c7;
-  border: 1px solid rgba(147, 215, 154, 0.6);
-  background: rgba(18, 50, 32, 0.72);
+  color: #f5f8ff;
+  border: 1px solid rgba(139, 196, 255, 0.64);
+  background:
+    radial-gradient(120px 80px at 20% 0%, rgba(167, 222, 255, 0.34), transparent 74%),
+    linear-gradient(135deg, #3588ff 0%, #695cff 100%);
 }
 
 .reg-access-submit:hover:not(:disabled),
@@ -397,12 +433,14 @@
 }
 
 .reg-btn-spinner {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.28);
-  border-top-color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  border-top-color: #b8e2ff;
+  border-right-color: #ffffff;
   display: none;
+  filter: drop-shadow(0 0 9px rgba(155, 206, 255, 0.42));
 }
 
 .reg-btn-spinner.is-visible {
@@ -414,8 +452,13 @@
   display: none;
 }
 
+.reg-access-submit:disabled .reg-btn-icon {
+  opacity: 0.48;
+  filter: grayscale(0.2) drop-shadow(0 0 8px rgba(120, 132, 210, 0.32));
+}
+
 .reg-register-panel {
-  padding: 13px;
+  padding: 14px;
   display: grid;
   gap: 4px;
 }
@@ -450,11 +493,11 @@ html.device-desktop .reg-access-page {
 
 @media (max-height: 760px) {
   .reg-access-page {
-    gap: 8px;
+    gap: 9px;
   }
 
   .reg-access-content {
-    gap: 9px;
+    gap: 14px;
   }
 
   .reg-access-copy h1 {
@@ -468,7 +511,7 @@ html.device-desktop .reg-access-page {
 
   .reg-access-card,
   .reg-register-panel {
-    padding: 10px;
+    padding: 12px;
   }
 
   .reg-access-form input,
@@ -492,6 +535,14 @@ html.device-desktop .reg-access-page {
 
   .reg-access-copy {
     gap: 6px;
+  }
+
+  .reg-access-content {
+    gap: 11px;
+  }
+
+  .reg-flow-group {
+    gap: 8px;
   }
 
   .reg-access-copy h1 {
@@ -534,5 +585,15 @@ html.device-desktop .reg-access-page {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes reg-button-sheen {
+  0% {
+    transform: translateX(-90%);
+  }
+  48%,
+  100% {
+    transform: translateX(90%);
   }
 }
