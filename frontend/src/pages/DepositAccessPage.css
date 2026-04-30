@@ -46,6 +46,10 @@
 }
 
 .dep-access-top {
+  z-index: 30;
+}
+
+.dep-access-top {
   min-height: 36px;
   display: flex;
   align-items: center;

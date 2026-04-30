@@ -69,6 +69,10 @@
 }
 
 .reg-access-top {
+  z-index: 30;
+}
+
+.reg-access-top {
   margin-top: calc(var(--gate-top-safe) + 14px);
   padding-left: max(0px, var(--gate-left-safe));
   padding-right: max(0px, var(--gate-right-safe));

@@ -3,7 +3,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  z-index: 80;
+  z-index: 1000;
 }
 
 .lang-label {
@@ -52,7 +52,7 @@
   overflow: hidden;
   background: rgba(4, 18, 36, 0.96);
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
-  z-index: 90;
+  z-index: 1001;
 }
 
 .lang-item {

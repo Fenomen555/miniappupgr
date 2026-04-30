@@ -4,6 +4,7 @@ import "./LangPicker.css";
 export default function LangPicker({ value, onChange, label }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+  const selectedRef = useRef(false);
 
   useEffect(() => {
     const onDocPointerDown = (e) => {
@@ -25,9 +26,31 @@ export default function LangPicker({ value, onChange, label }) {
   const current = String(value || "ru").toLowerCase();
   const menuId = "lang-menu";
 
+  const toggleOpen = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setOpen((v) => !v);
+  };
+
   const selectLang = (next) => {
     if (next !== current) onChange(next);
     setOpen(false);
+  };
+
+  const selectFromPointer = (e, next) => {
+    e.preventDefault();
+    e.stopPropagation();
+    selectedRef.current = true;
+    selectLang(next);
+    window.setTimeout(() => {
+      selectedRef.current = false;
+    }, 0);
+  };
+
+  const selectFromClick = (e, next) => {
+    e.stopPropagation();
+    if (selectedRef.current) return;
+    selectLang(next);
   };
 
   return (
@@ -39,9 +62,11 @@ export default function LangPicker({ value, onChange, label }) {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={menuId}
-        onClick={(e) => {
-          e.stopPropagation();
-          setOpen((v) => !v);
+        onPointerDown={toggleOpen}
+        onClick={(e) => e.preventDefault()}
+        onKeyDown={(e) => {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          toggleOpen(e);
         }}
       >
         {current.toUpperCase()} <span className={`chev ${open ? "up" : ""}`}></span>
@@ -56,10 +81,8 @@ export default function LangPicker({ value, onChange, label }) {
               role="option"
               aria-selected={current === o.v}
               className={`lang-item ${current === o.v ? "active" : ""}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                selectLang(o.v);
-              }}
+              onPointerDown={(e) => selectFromPointer(e, o.v)}
+              onClick={(e) => selectFromClick(e, o.v)}
             >
               {o.t}
             </button>
