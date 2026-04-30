@@ -21,6 +21,38 @@ need_cmd() {
   }
 }
 
+cleanup_legacy_frontend_target() {
+  local resolved
+  resolved="$(readlink -f "$FRONTEND_TARGET")"
+
+  case "$resolved" in
+    /var/www/app_devsbite_usr/data/www/app.devsbite.com)
+      ;;
+    *)
+      log "Skipping frontend source cleanup for unexpected target: $resolved"
+      return 0
+      ;;
+  esac
+
+  local stale_entries=(
+    node_modules
+    public
+    src
+    .gitignore
+    eslint.config.js
+    index.html
+    nginx.php
+    package-lock.json
+    package.json
+    README.md
+    vite.config.js
+  )
+
+  for entry in "${stale_entries[@]}"; do
+    rm -rf -- "$FRONTEND_TARGET/$entry"
+  done
+}
+
 exec 9>"$LOCK_FILE"
 if ! flock -n 9; then
   log "Another deploy is already running"
@@ -113,6 +145,7 @@ if [ "$frontend_changed" = "1" ]; then
 
   mkdir -p "$FRONTEND_TARGET/dist"
   rsync -a --delete "$REPO_DIR/frontend/dist/" "$FRONTEND_TARGET/dist/"
+  cleanup_legacy_frontend_target
   if id app_devsbite_usr >/dev/null 2>&1; then
     chown -R app_devsbite_usr:app_devsbite_usr "$FRONTEND_TARGET/dist"
   fi

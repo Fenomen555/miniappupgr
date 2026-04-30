@@ -30,6 +30,8 @@ When frontend files change, deploy runs `npm ci`, `npm run build`, and syncs:
 frontend/dist/ -> /var/www/app_devsbite_usr/data/www/app.devsbite.com/dist/
 ```
 
+The production web folder is not the frontend source checkout. Frontend source stays in `/opt/miniappupgr/frontend`; the public site folder keeps only the built `dist/`.
+
 Manual deploy on the server:
 
 ```bash
