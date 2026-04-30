@@ -76,14 +76,11 @@ export default function RegistrationAccessPage({
       </header>
 
       <div className="reg-access-content">
+        <GateMascotLottie src="/lottie/registered.json" className="reg-register-lottie" />
+
         <div className="reg-access-copy">
-          <div className="reg-copy-head">
-            <div className="reg-copy-text">
-              <h1>{t.registration.title}</h1>
-              <p className="reg-system-text">{t.registration.systemText}</p>
-            </div>
-            <GateMascotLottie src="/lottie/registered.json" className="reg-register-lottie" />
-          </div>
+          <h1>{t.registration.title}</h1>
+          <p className="reg-system-text">{t.registration.systemText}</p>
           <p className="reg-access-subtitle">{t.registration.subtitle}</p>
         </div>
 
