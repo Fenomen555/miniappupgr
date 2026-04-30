@@ -69,9 +69,10 @@ export default function RegistrationAccessPage({
       <div className="reg-access-backdrop reg-access-backdrop-b" />
 
       <header className="reg-access-top">
-        <div className="reg-brand-wrap">
+        <div className="reg-top-spacer" aria-hidden="true" />
+        <div className="reg-brand-widget">
           <span className="reg-brand-spark" aria-hidden="true" />
-          <div className="reg-access-brand">{projectName}</div>
+          <span>{projectName}</span>
         </div>
         <div className="reg-top-actions">
           <LangPicker value={lang} onChange={setLang} label={t.langLabel} />
@@ -80,7 +81,6 @@ export default function RegistrationAccessPage({
 
       <div className="reg-access-content">
         <div className="reg-access-copy">
-          <span className="reg-access-kicker">{t.registration.kicker}</span>
           <h1>{t.registration.title}</h1>
           <p>{t.registration.subtitle}</p>
         </div>

@@ -28,6 +28,10 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background:
+    radial-gradient(640px 420px at 50% -18%, rgba(143, 98, 34, 0.32), transparent 68%),
+    radial-gradient(520px 360px at 50% 116%, rgba(108, 78, 30, 0.18), transparent 70%),
+    linear-gradient(180deg, #17110a 0%, #080808 58%, #030304 100%);
   font-family: "Sora", "Space Grotesk", "Manrope", sans-serif;
   transition: opacity 240ms ease, transform 240ms ease, filter 240ms ease;
 }
@@ -47,19 +51,19 @@
 }
 
 .reg-access-backdrop-a {
-  width: 360px;
-  height: 360px;
-  left: -170px;
+  width: 340px;
+  height: 340px;
+  left: -150px;
   top: -130px;
-  background: rgba(214, 157, 62, 0.3);
+  background: rgba(169, 111, 36, 0.26);
 }
 
 .reg-access-backdrop-b {
-  width: 460px;
-  height: 460px;
+  width: 440px;
+  height: 440px;
   right: -220px;
-  bottom: -230px;
-  background: rgba(21, 62, 125, 0.52);
+  bottom: -220px;
+  background: rgba(105, 72, 24, 0.18);
 }
 
 .reg-access-top,
@@ -79,12 +83,41 @@
   gap: 12px;
 }
 
-.reg-brand-wrap {
+.reg-top-spacer,
+.reg-top-actions {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.reg-top-actions {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.reg-brand-widget {
+  min-width: 0;
+  max-width: min(52vw, 230px);
+  height: 42px;
+  border-radius: 13px;
+  border: 1px solid rgba(159, 111, 44, 0.46);
+  background: linear-gradient(180deg, rgba(40, 30, 17, 0.9), rgba(17, 14, 10, 0.9));
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 218, 151, 0.09);
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  min-width: 0;
-  flex: 1 1 auto;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+  color: #d9ad60;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .reg-brand-spark {
@@ -93,24 +126,7 @@
   border-radius: 999px;
   background: radial-gradient(circle at 30% 30%, #fbe3ab, #cf9643 70%);
   box-shadow: 0 0 18px rgba(223, 171, 82, 0.76);
-}
-
-.reg-access-brand {
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #f0c87e;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.3);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.reg-top-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
+  flex: 0 0 auto;
 }
 
 .reg-access-top .lang-picker {
@@ -122,9 +138,9 @@
 }
 
 .reg-access-top .lang-btn {
-  border-color: rgba(240, 200, 126, 0.45);
-  background: #1b2232;
-  color: #e6eefc;
+  border-color: rgba(159, 111, 44, 0.62);
+  background: #17130d;
+  color: #ead3a6;
   min-height: 41px;
   height: 41px;
   padding-top: 0;
@@ -132,13 +148,13 @@
 }
 
 .reg-access-top .lang-menu {
-  background: #0d192b;
-  border-color: rgba(240, 200, 126, 0.35);
+  background: #15100a;
+  border-color: rgba(159, 111, 44, 0.58);
   backdrop-filter: none;
 }
 
 .reg-access-top .lang-item {
-  color: #dae8fb;
+  color: #ead3a6;
 }
 
 .reg-access-content {
@@ -156,20 +172,7 @@
 
 .reg-access-copy {
   display: grid;
-  gap: 8px;
-}
-
-.reg-access-kicker {
-  width: fit-content;
-  border-radius: 999px;
-  border: 1px solid rgba(240, 200, 126, 0.34);
-  background: rgba(240, 200, 126, 0.1);
-  color: #f5d79c;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  padding: 6px 10px;
+  gap: 9px;
 }
 
 .reg-access-copy h1 {
@@ -177,6 +180,7 @@
   font-size: clamp(2rem, 8.2vw, 3rem);
   line-height: 1.02;
   color: #f2f6ff;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
 }
 
 .reg-access-copy p {
@@ -189,8 +193,8 @@
 .reg-access-card,
 .reg-register-panel {
   border-radius: 15px;
-  border: 1px solid rgba(240, 200, 126, 0.24);
-  background: linear-gradient(180deg, rgba(13, 18, 31, 0.86), rgba(8, 12, 22, 0.78));
+  border: 1px solid rgba(159, 111, 44, 0.42);
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.9), rgba(7, 7, 8, 0.84));
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
 }
 
@@ -248,8 +252,8 @@
   width: 100%;
   min-height: 48px;
   border-radius: 13px;
-  border: 1px solid rgba(240, 200, 126, 0.28);
-  background: linear-gradient(180deg, rgba(13, 19, 31, 0.96), rgba(7, 11, 20, 0.95));
+  border: 1px solid rgba(159, 111, 44, 0.38);
+  background: linear-gradient(180deg, rgba(8, 8, 9, 0.98), rgba(5, 5, 6, 0.95));
   color: #f5f7ff;
   font-size: 1rem;
   padding: 12px 14px;
@@ -296,7 +300,7 @@
 
 .reg-access-submit {
   color: #1b1307;
-  background: linear-gradient(132deg, #b88734, #f2c772);
+  background: linear-gradient(132deg, #94631f, #d7a955);
   box-shadow: 0 10px 22px rgba(145, 103, 40, 0.3);
 }
 
@@ -346,9 +350,9 @@
 }
 
 .reg-access-create-btn {
-  color: #f1cf91;
-  border: 1px solid rgba(240, 200, 126, 0.42);
-  background: rgba(20, 17, 12, 0.3);
+  color: #d9ad60;
+  border: 1px solid rgba(159, 111, 44, 0.56);
+  background: rgba(16, 13, 9, 0.62);
 }
 
 html.device-mobile .reg-access-page {

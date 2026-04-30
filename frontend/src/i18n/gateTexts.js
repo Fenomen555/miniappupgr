@@ -2,7 +2,6 @@ export const GATE_TEXTS = {
   ru: {
     langLabel: "Язык",
     registration: {
-      kicker: "Закрытый доступ",
       title: "Добро пожаловать.",
       subtitle:
         "Чтобы открыть приложение, укажите Trader ID. Если аккаунта еще нет, регистрацию можно пройти прямо сейчас.",
@@ -37,7 +36,6 @@ export const GATE_TEXTS = {
   en: {
     langLabel: "Language",
     registration: {
-      kicker: "Private access",
       title: "Welcome.",
       subtitle:
         "To open the app, enter your Trader ID. If you do not have an account yet, you can register now.",
@@ -72,7 +70,6 @@ export const GATE_TEXTS = {
   in: {
     langLabel: "Language",
     registration: {
-      kicker: "Private access",
       title: "Welcome.",
       subtitle:
         "To open the app, enter your Trader ID. If you do not have an account yet, you can register now.",
