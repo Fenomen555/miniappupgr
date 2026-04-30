@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LangPicker from "../components/LangPicker";
+import GateMascotLottie from "../components/GateMascotLottie";
 import "./RegistrationAccessPage.css";
 
 const TRADER_ID_RE = /^[A-Za-z0-9._-]{3,64}$/;
@@ -76,8 +77,14 @@ export default function RegistrationAccessPage({
 
       <div className="reg-access-content">
         <div className="reg-access-copy">
-          <h1>{t.registration.title}</h1>
-          <p>{t.registration.subtitle}</p>
+          <div className="reg-copy-head">
+            <div className="reg-copy-text">
+              <h1>{t.registration.title}</h1>
+              <p className="reg-system-text">{t.registration.systemText}</p>
+            </div>
+            <GateMascotLottie src="/lottie/registered.json" className="reg-register-lottie" />
+          </div>
+          <p className="reg-access-subtitle">{t.registration.subtitle}</p>
         </div>
 
         <div className="reg-flow-group reg-flow-primary">
