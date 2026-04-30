@@ -80,7 +80,7 @@ export default function RegistrationAccessPage({
           <p>{t.registration.subtitle}</p>
         </div>
 
-        <form className="reg-access-card reg-access-form" onSubmit={submit}>
+        <form id="reg-access-form" className="reg-access-card reg-access-form" onSubmit={submit}>
           <div className="reg-card-head">
             <h3>{t.registration.traderTitle}</h3>
             <p>{t.registration.traderText}</p>
@@ -93,44 +93,52 @@ export default function RegistrationAccessPage({
             </div>
           )}
 
-          <input
-            id="reg-trader-id"
-            value={traderId}
-            onChange={(e) => {
-              const cleaned = cleanTraderId(e.target.value);
-              setTraderId(cleaned);
-              setDirty(true);
-              setLocalError(validateTraderId(cleaned, false));
-            }}
-            onBlur={() => {
-              if (!dirty) return;
-              setLocalError(validateTraderId(traderId, false));
-            }}
-            placeholder={t.registration.traderPlaceholder}
-            autoComplete="off"
-            inputMode="text"
-          />
+          <label className="reg-id-field" htmlFor="reg-trader-id">
+            <span className="reg-id-field-icon" aria-hidden="true">
+              <img src="/icons/search.png" alt="" />
+            </span>
+            <input
+              id="reg-trader-id"
+              value={traderId}
+              onChange={(e) => {
+                const cleaned = cleanTraderId(e.target.value);
+                setTraderId(cleaned);
+                setDirty(true);
+                setLocalError(validateTraderId(cleaned, false));
+              }}
+              onBlur={() => {
+                if (!dirty) return;
+                setLocalError(validateTraderId(traderId, false));
+              }}
+              placeholder={t.registration.traderPlaceholder}
+              autoComplete="off"
+              inputMode="text"
+            />
+          </label>
           <p className="reg-access-note">{t.registration.securityNote}</p>
           {inlineError && <div className="reg-access-inline-error">{inlineError}</div>}
-          <button
-            className={`reg-access-submit ${checking ? "is-busy" : ""} ${transitioning ? "is-success" : ""}`}
-            type="submit"
-            disabled={!traderId.trim() || checking}
-          >
-            <span className={`reg-btn-spinner ${checking ? "is-visible" : ""}`} aria-hidden="true" />
-            <span>{actionLabel}</span>
-          </button>
         </form>
+        <button
+          className={`reg-access-submit ${checking ? "is-busy" : ""} ${transitioning ? "is-success" : ""}`}
+          type="submit"
+          form="reg-access-form"
+          disabled={!traderId.trim() || checking}
+        >
+          <span className={`reg-btn-spinner ${checking ? "is-visible" : ""}`} aria-hidden="true" />
+          <img className="reg-btn-icon reg-btn-icon-search" src="/icons/search.png" alt="" aria-hidden="true" />
+          <span>{actionLabel}</span>
+        </button>
 
         <section className="reg-register-panel">
           <div>
             <h3>{t.registration.registerTitle}</h3>
             <p>{t.registration.registerText}</p>
           </div>
-          <a href={registrationLink} target="_blank" rel="noopener noreferrer" className="reg-access-create-btn">
-            {t.registration.createButton}
-          </a>
         </section>
+        <a href={registrationLink} target="_blank" rel="noopener noreferrer" className="reg-access-create-btn">
+          <img className="reg-btn-icon reg-btn-icon-bolt" src="/icons/bolt.png" alt="" aria-hidden="true" />
+          <span>{t.registration.createButton}</span>
+        </a>
       </div>
 
       <footer className="reg-access-footer">
