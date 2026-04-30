@@ -3,8 +3,7 @@ export const GATE_TEXTS = {
     langLabel: "Язык",
     registration: {
       title: "Добро пожаловать",
-      subtitle:
-        "Введите Trader ID, чтобы открыть приложение. Нет аккаунта? Зарегистрируйтесь сейчас",
+      subtitle: "Введите Trader ID, чтобы получить доступ к системе",
       traderTitle: "Укажите Trader ID",
       traderText: "Проверим профиль и откроем доступ",
       registerTitle: "Еще не зарегистрированы?",
@@ -37,8 +36,7 @@ export const GATE_TEXTS = {
     langLabel: "Language",
     registration: {
       title: "Welcome",
-      subtitle:
-        "Enter your Trader ID to open the app. No account yet? Register now",
+      subtitle: "Enter your Trader ID to access the system",
       traderTitle: "Enter Trader ID",
       traderText: "We will check your profile and open access",
       registerTitle: "Not registered yet?",
@@ -71,8 +69,7 @@ export const GATE_TEXTS = {
     langLabel: "Language",
     registration: {
       title: "Welcome",
-      subtitle:
-        "Enter your Trader ID to open the app. No account yet? Register now",
+      subtitle: "Enter your Trader ID to access the system",
       traderTitle: "Enter Trader ID",
       traderText: "We will check your profile and open access",
       registerTitle: "Not registered yet?",
@@ -99,6 +96,6 @@ export const GATE_TEXTS = {
       createHint: "",
       createButton: "",
     },
-    checking: "Checking...",
+    checking: "Checking",
   },
 };
