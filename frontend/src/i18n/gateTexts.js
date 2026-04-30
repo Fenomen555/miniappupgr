@@ -17,6 +17,7 @@ export const GATE_TEXTS = {
       infoTitle: "Где взять ID",
       infoText:
         "Откройте торговый профиль на сайте. Под именем пользователя найдите строку UID - это и есть ваш ID для проверки. Нажмите значок копирования рядом с UID, вернитесь в приложение и вставьте ID в поле.",
+      infoProfileTitle: "Торговый профиль",
       infoImageCaption: "Нажмите значок копирования рядом с UID",
       infoClose: "Понятно",
       validationRequired: "Укажите ID для проверки",
@@ -58,6 +59,7 @@ export const GATE_TEXTS = {
       infoTitle: "Where to find ID",
       infoText:
         "Open your trading profile on the website. Under your username, find the UID line - this is the ID used for verification. Tap the copy icon next to UID, return to the app and paste the ID into the field.",
+      infoProfileTitle: "Trading profile",
       infoImageCaption: "Tap the copy icon next to UID",
       infoClose: "Got it",
       validationRequired: "Enter ID to continue",
@@ -99,6 +101,7 @@ export const GATE_TEXTS = {
       infoTitle: "Where to find ID",
       infoText:
         "Open your trading profile on the website. Under your username, find the UID line - this is the ID used for verification. Tap the copy icon next to UID, return to the app and paste the ID into the field.",
+      infoProfileTitle: "Trading profile",
       infoImageCaption: "Tap the copy icon next to UID",
       infoClose: "Got it",
       validationRequired: "Enter ID to continue",
