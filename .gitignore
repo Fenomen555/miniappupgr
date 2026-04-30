@@ -1,0 +1,20 @@
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+*.log
+
+.deploy-last-sha
+.DS_Store
+Thumbs.db
+
+# Local legacy snapshots; production deploy uses top-level backend/ and frontend/.
+/bot/
+/miniapp/
+/POSTBACK/
+/v2/
+/stavitskiy_c.sql

@@ -1,0 +1,10 @@
+[Unit]
+Description=Deploy miniappupgr from GitHub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+Environment=REPO_DIR=/opt/miniappupgr
+Environment=DEPLOY_BRANCH=main
+ExecStart=/bin/bash /opt/miniappupgr/deploy/deploy.sh

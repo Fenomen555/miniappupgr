@@ -1,0 +1,222 @@
+.admin-page {
+  min-height: 100vh;
+  padding: 20px;
+  background:
+    radial-gradient(1100px 620px at -10% -10%, rgba(240, 206, 132, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(130, 176, 255, 0.12), transparent 62%),
+    #071429;
+  color: #ecf5ff;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+.admin-card {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid rgba(240, 206, 132, 0.3);
+  background: linear-gradient(180deg, rgba(10, 28, 52, 0.96), rgba(8, 20, 38, 0.94));
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.38);
+  padding: 20px;
+}
+
+.admin-shell {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.admin-head h1 {
+  margin: 0;
+  color: #f0ce84;
+}
+
+.admin-muted {
+  margin: 6px 0 0;
+  color: #97b2cc;
+}
+
+.admin-role {
+  border: 1px solid rgba(240, 206, 132, 0.5);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: #f0ce84;
+  font-weight: 700;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-tab {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.02);
+  color: #d6e8fb;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.admin-tab.active {
+  border-color: rgba(240, 206, 132, 0.7);
+  background: rgba(240, 206, 132, 0.15);
+  color: #f0ce84;
+}
+
+.admin-section {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-section h2,
+.admin-section h3 {
+  margin-top: 0;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.admin-field {
+  display: grid;
+  gap: 6px;
+}
+
+.admin-field > span {
+  color: #a9c3de;
+  font-size: 0.9rem;
+}
+
+.admin-field input,
+.admin-field select,
+.admin-field textarea,
+.status-row input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  background: #0a1c33;
+  color: #edf7ff;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.admin-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.admin-field input:focus,
+.admin-field select:focus,
+.admin-field textarea:focus,
+.status-row input:focus {
+  border-color: rgba(240, 206, 132, 0.8);
+}
+
+.admin-btn {
+  border: 1px solid rgba(240, 206, 132, 0.65);
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f0ce84, #d7ad63);
+  color: #081427;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 10px 14px;
+}
+
+.admin-btn.ghost {
+  background: rgba(255, 255, 255, 0.02);
+  color: #f0ce84;
+}
+
+.admin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.status-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 120px 100px 92px 118px;
+  gap: 8px;
+  align-items: center;
+}
+
+.mini-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #d8e9fb;
+}
+
+.admin-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 100px 2fr;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.perm-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.admin-footer {
+  margin-top: 2px;
+}
+
+.admin-error,
+.admin-ok {
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.admin-error {
+  border: 1px solid rgba(255, 120, 120, 0.45);
+  color: #ffd2d2;
+  background: rgba(180, 52, 52, 0.2);
+  white-space: pre-wrap;
+}
+
+.admin-ok {
+  border: 1px solid rgba(240, 206, 132, 0.45);
+  color: #fde2af;
+  background: rgba(240, 206, 132, 0.14);
+}
+
+@media (max-width: 980px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-row {
+    grid-template-columns: 1fr;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+  .admin-row {
+    grid-template-columns: 1fr;
+  }
+}

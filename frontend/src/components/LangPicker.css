@@ -1,0 +1,76 @@
+.lang-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 80;
+}
+
+.lang-label {
+  color: #99abc1;
+  font-size: 0.76rem;
+}
+
+.lang-btn {
+  min-width: 68px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #d9e9ff;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 9px 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid rgba(227, 190, 120, 0.75);
+  outline-offset: 2px;
+}
+
+.lang-btn .chev {
+  display: inline-block;
+  margin-left: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  transition: transform 120ms ease;
+}
+
+.lang-btn .chev.up {
+  transform: rotate(-135deg);
+}
+
+.lang-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 84px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+  background: rgba(4, 18, 36, 0.96);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+  z-index: 90;
+}
+
+.lang-item {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #cde0f9;
+  font-weight: 700;
+}
+
+.lang-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.lang-item.active {
+  background: rgba(246, 209, 135, 0.22);
+  color: #ffde9f;
+}

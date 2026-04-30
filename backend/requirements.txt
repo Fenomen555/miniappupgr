@@ -1,0 +1,10 @@
+﻿fastapi
+uvicorn[standard]
+aiomysql
+httpx
+apscheduler
+tradingview-ta
+pyTelegramBotAPI
+mysql-connector-python
+pydantic
+python-dotenv
