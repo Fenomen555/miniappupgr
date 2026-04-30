@@ -188,26 +188,8 @@ export default function RegistrationAccessPage({
               <h2 id="reg-info-title">{t.registration.infoTitle}</h2>
             </div>
             <p>{t.registration.infoText}</p>
-            <figure className="reg-info-visual">
-              <div className="reg-info-visual-window" aria-hidden="true">
-                <div className="reg-info-visual-bar">{t.registration.infoProfileTitle}</div>
-                <div className="reg-info-visual-body">
-                  <div className="reg-info-visual-card">
-                    <div className="reg-info-avatar">
-                      <span className="reg-info-avatar-head" />
-                      <span className="reg-info-avatar-body" />
-                    </div>
-                    <div className="reg-info-user">
-                      <strong>User123759341</strong>
-                      <span>UID 123759341</span>
-                    </div>
-                    <div className="reg-info-copy-target">
-                      <span className="reg-info-copy-icon" />
-                      <span className="reg-info-copy-arrow" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <figure className="reg-info-image">
+              <img src="/images/id-copy-guide.svg" alt={t.registration.infoImageCaption} />
               <figcaption>{t.registration.infoImageCaption}</figcaption>
             </figure>
             <button className="reg-info-done" type="button" onClick={() => setInfoOpen(false)}>
