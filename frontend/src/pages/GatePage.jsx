@@ -9,7 +9,6 @@ export default function GatePage({
   me,
   checking,
   onCheck,
-  onTestMode = () => {},
   error,
   lang = "ru",
   setLang = () => {},
@@ -56,11 +55,9 @@ export default function GatePage({
       setLang={setLang}
       projectName={projectName}
       registrationLink={registrationLink}
-      supportLink={settings?.support_link || ""}
       initialTraderId={savedTraderId}
       showRetry={Boolean(savedTraderId)}
       transitioning={transitioning}
-      onTestMode={onTestMode}
     />
   );
 }

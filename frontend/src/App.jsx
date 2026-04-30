@@ -90,7 +90,6 @@ export default function App() {
   const [gateError, setGateError] = useState("");
   const [checking, setChecking] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
-  const [testMode, setTestMode] = useState(false);
 
   const loadMe = async () => {
     const [meRes, settingsRes] = await Promise.all([apiGetMe(), apiGetPublicSettings()]);
@@ -132,7 +131,6 @@ export default function App() {
     setGateError("");
     setChecking(true);
     setTransitioning(false);
-    setTestMode(false);
     try {
       const res = await apiCheckAccess(traderId);
       const nextGate = String(res?.gate || "").toLowerCase();
@@ -154,16 +152,6 @@ export default function App() {
   }
 
   if (gate !== "allowed") {
-    if (testMode) {
-      return (
-        <AccessReadyPage
-          lang={lang}
-          setLang={setLang}
-          projectName={settings?.project_name || "Signals"}
-          me={me}
-        />
-      );
-    }
     return (
       <GatePage
         gate={gate}
@@ -175,7 +163,6 @@ export default function App() {
         lang={lang}
         setLang={setLang}
         transitioning={transitioning}
-        onTestMode={() => setTestMode(true)}
       />
     );
   }
