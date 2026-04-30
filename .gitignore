@@ -9,6 +9,7 @@ __pycache__/
 *.log
 
 .deploy-last-sha
+.deploy-secrets/
 .DS_Store
 Thumbs.db
 

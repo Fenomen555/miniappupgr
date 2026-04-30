@@ -24,11 +24,9 @@ else
 fi
 
 install -m 0644 "$REPO_DIR/deploy/systemd/miniappupgr-deploy.service" /etc/systemd/system/miniappupgr-deploy.service
-install -m 0644 "$REPO_DIR/deploy/systemd/miniappupgr-deploy.timer" /etc/systemd/system/miniappupgr-deploy.timer
 
 systemctl daemon-reload
-systemctl enable --now miniappupgr-deploy.timer
 
 FORCE_DEPLOY=1 /bin/bash "$REPO_DIR/deploy/deploy.sh"
 
-systemctl status miniappupgr-deploy.timer --no-pager
+systemctl status miniappupgr-deploy.service --no-pager || true

@@ -16,7 +16,7 @@ Runtime secrets are not committed. The production backend keeps its environment 
 
 ## Deploy Model
 
-The server keeps a checkout at `/opt/miniappupgr`. A systemd timer runs every minute and pulls `origin/main`.
+The server keeps a checkout at `/opt/miniappupgr`. GitHub Actions triggers deployment after pushes to `main` that touch `backend/`, `frontend/`, `deploy/`, or the deploy workflow.
 
 When backend files change, deploy syncs `backend/` to `/root/botminitest`, preserves `.env`, installs Python requirements, and restarts:
 
@@ -35,3 +35,10 @@ Manual deploy on the server:
 ```bash
 FORCE_DEPLOY=1 /bin/bash /opt/miniappupgr/deploy/deploy.sh
 ```
+
+Required GitHub Actions secrets:
+
+- `DEPLOY_HOST` - production server IP or hostname.
+- `DEPLOY_USER` - SSH user, currently `root`.
+- `DEPLOY_PORT` - optional SSH port, defaults to `22`.
+- `DEPLOY_SSH_KEY` - private key allowed to trigger `/opt/miniappupgr/deploy/deploy.sh`.
