@@ -523,7 +523,9 @@
 }
 
 .reg-info-image {
-  margin: 0;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   border-radius: 16px;
   border: 1px solid rgba(109, 123, 255, 0.24);
   background: rgba(4, 6, 27, 0.62);
@@ -532,7 +534,7 @@
 
 .reg-info-image img {
   display: block;
-  width: 100%;
+  width: min(248px, 100%);
   height: auto;
   aspect-ratio: 248 / 140;
   border-radius: 12px;
