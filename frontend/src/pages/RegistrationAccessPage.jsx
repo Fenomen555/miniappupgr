@@ -124,7 +124,10 @@ export default function RegistrationAccessPage({
               />
             </label>
             <div className="reg-access-note">
-              <span>{t.registration.securityNote}</span>
+              <span>
+                <img src="/icons/info.png" alt="" aria-hidden="true" />
+                {t.registration.securityNote}
+              </span>
             </div>
             {inlineError && <div className="reg-access-inline-error">{inlineError}</div>}
           </form>

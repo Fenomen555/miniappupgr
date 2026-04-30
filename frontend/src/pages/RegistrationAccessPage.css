@@ -369,6 +369,7 @@
 .reg-access-note span {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   min-height: 24px;
   border-radius: 999px;
   border: 1px solid rgba(117, 109, 255, 0.28);
@@ -377,6 +378,14 @@
   padding: 4px 9px;
   font-size: 0.74rem;
   line-height: 1.2;
+}
+
+.reg-access-note img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 7px rgba(64, 154, 255, 0.28));
+  flex: 0 0 auto;
 }
 
 .reg-access-inline-error {
